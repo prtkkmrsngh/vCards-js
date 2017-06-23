@@ -10,7 +10,7 @@
  */
 var vCard = (function () {
 
-  var fs = require('react-native-fs');
+  var fs = require('react-native-fetch-blob').default;
 
     /**
      * Get photo object for storing photos in vCards
