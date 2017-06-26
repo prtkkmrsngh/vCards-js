@@ -313,8 +313,12 @@ var vCard = (function () {
         saveToFile: function(filename) {
             var vCardFormatter = require('./lib/vCardFormatter');
             var contents = vCardFormatter.getFormattedString(this);
-
-            return RNFetchBlob.fs.writeFile(filename, contents, 'utf8');
+            return new Promise( function( resolve, reject ) { 
+              RNFetchBlob.fs.writeFile(filename, contents, 'utf8')
+              .then(() => {
+                resolve();
+              });
+            });
         }
     };
 });
