@@ -37,7 +37,7 @@ var vCard = (function () {
              * @param  {string} filename
              */
             embedFromFile: function(fileLocation) {
-              var imgData = RNFetchBlob.readFile(fileLocation);
+              var imgData = RNFetchBlob.fs.readFile(fileLocation);
               this.url = imgData.toString('base64');
               this.base64 = true;
             }
@@ -314,7 +314,7 @@ var vCard = (function () {
             var vCardFormatter = require('./lib/vCardFormatter');
             var contents = vCardFormatter.getFormattedString(this);
 
-            return RNFetchBlob.writeFile(filename, contents, 'utf8');
+            return RNFetchBlob.fs.writeFile(filename, contents, 'utf8');
         }
     };
 });
