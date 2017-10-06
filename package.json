@@ -4,7 +4,7 @@
   "description": "Create vCards to import contacts into Outlook, iOS, Mac OS, Android devices, and more.",
   "main": "index.js",
   "dependencies": {
-    "moment": "~2.13.0"
+    "moment": "https://github.com/tqc/moment.git#no-dynamic-import"
   },
   "devDependencies": {
     "mocha": "~2.5.3"
