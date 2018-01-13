@@ -317,6 +317,9 @@ var vCard = (function () {
               RNFetchBlob.fs.writeFile(filename, contents, 'utf8')
               .then(() => {
                 resolve();
+              })
+              .catch(err => {
+                reject(err);
               });
             });
         }
